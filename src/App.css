@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: rgb(238, 174, 202);
+	background: radial-gradient(
+		circle,
+		rgba(238, 174, 202, 1) 0%,
+		rgba(148, 187, 233, 1) 100%
+	);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+	font-size: 1.85rem;
+	color: whitesmoke;
+	line-height: 3.5rem;
+	text-transform: uppercase;
+	background: rgb(138, 20, 72);
+	background: linear-gradient(
+		90deg,
+		rgba(138, 20, 72, 1) 0%,
+		rgba(24, 117, 228, 1) 100%
+	);
+	width: 100%;
+	text-align: center;
+	padding: 1rem 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app {
+	display: grid;
+	padding: 1.5rem 0;
+	gap: 2rem;
+	padding: 1.5rem 0.5rem;
+	justify-content: center;
+	justify-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.card {
+	width: 100%;
+	max-width: 20rem;
+	display: flex;
+	padding: 1rem 0;
+	flex-direction: column;
+	border: 1px solid black;
+	color: white;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		45deg,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(222, 49, 19, 1) 0%,
+		rgba(217, 187, 182, 1) 49%,
+		rgba(229, 19, 69, 1) 100%
+	);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card:hover {
+	transform: scale(1.05);
+}
+.image {
+	width: 100%;
+	max-width: 12rem;
+	height: 12rem;
+	align-self: center;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: top center;
+}
+.title {
+	font-size: 1.5rem;
+	text-align: center;
+	color: #123637;
+}
+.rating {
+	font-size: 1.25rem;
+	text-align: center;
+	letter-spacing: 0.25rem;
+	color: red;
+}
+.summary {
+	padding: 0.5rem 1.25rem;
+	color: white;
+}
+@media (min-width: 600px) {
+	.app {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 900px) {
+	.app {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media (min-width: 1200px) {
+	.app {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
