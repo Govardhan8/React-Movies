@@ -8,6 +8,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	min-height: 100vh;
 	background: rgb(238, 174, 202);
 	background: radial-gradient(
 		circle,
@@ -18,7 +19,6 @@
 .header {
 	font-size: 1.85rem;
 	color: whitesmoke;
-	line-height: 3.5rem;
 	text-transform: uppercase;
 	background: rgb(138, 20, 72);
 	background: linear-gradient(
