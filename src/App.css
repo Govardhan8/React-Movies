@@ -67,12 +67,13 @@
 	object-position: top center;
 }
 .title {
-	font-size: 1.5rem;
+	font-size: 1.35rem;
 	text-align: center;
 	color: #123637;
+	text-transform: uppercase;
 }
 .rating {
-	font-size: 1.25rem;
+	font-size: 1.15rem;
 	text-align: center;
 	letter-spacing: 0.25rem;
 	color: red;
