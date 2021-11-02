@@ -53,6 +53,7 @@
 		rgba(217, 187, 182, 1) 49%,
 		rgba(229, 19, 69, 1) 100%
 	);
+	transition: all 0.25s ease-out;
 }
 .card:hover {
 	transform: scale(1.05);
