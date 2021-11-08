@@ -1,0 +1,17 @@
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.75rem 2rem;
+}
+.button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: transparent;
+	border: none;
+	padding: 0 1rem;
+	font-size: 1.5rem;
+}
+.button span {
+	padding-left: 1rem;
+}

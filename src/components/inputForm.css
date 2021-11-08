@@ -1,0 +1,28 @@
+.inputContainer {
+	width: 20rem;
+	padding: 2rem;
+	display: grid;
+	gap: 1rem;
+	max-width: 45rem;
+}
+.inputs input {
+	width: 16rem;
+}
+@media (min-width: 650px) {
+	.inputContainer {
+		width: 45rem;
+		display: grid;
+		gap: 1rem;
+		max-width: 45rem;
+		justify-items: center;
+	}
+	.inputs {
+		width: 40rem;
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: 1fr 1fr;
+	}
+	Button {
+		width: 35rem;
+	}
+}
