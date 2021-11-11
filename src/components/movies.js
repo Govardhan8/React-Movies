@@ -1,29 +1,50 @@
 import { Movie } from './Movie'
-import movies from './moviesData'
-import { useState } from 'react'
-import InputForm from './InputForm'
+import { useTheme, useMovies } from './context/Theme'
+import Like from './Like'
+import { useHistory } from 'react-router-dom'
+import DeleteIcon from '@mui/icons-material/Delete'
+import EditIcon from '@mui/icons-material/Edit'
 
 const Movies = () => {
-	const [moviesList, setMoviesList] = useState([...movies])
-	const handleClick = (mov) => {
-		setMoviesList([...moviesList, mov])
+	const { theme } = useTheme()
+	const { movies, setMovies } = useMovies()
+	const deleteMovie = (name) => {
+		console.log('deleting', name)
+		const newMovies = movies.filter((m) => m.name !== name)
+		setMovies([...newMovies])
 	}
+	const history = useHistory()
 	return (
 		<>
-			<nav className='navbar'>
-				<h1 className='header'>Avengers Movies</h1>
-			</nav>
-			<section className='container'>
-				<InputForm handleClick={handleClick} />
+			<section
+				className='container'
+				style={{ background: !theme ? '#0a1929' : 'white' }}
+			>
 				<article className='app'>
-					{moviesList.map(({ name, poster, rating, summary }) => (
-						<Movie
-							key={name}
-							name={name}
-							url={poster}
-							rating={rating}
-							summary={summary}
-						/>
+					{movies.map(({ name, poster, rating, summary }) => (
+						<div key={name}>
+							<Movie
+								name={name}
+								url={poster}
+								rating={rating}
+								summary={summary}
+							/>
+							<div className='buttonList'>
+								<Like />
+								<div className='space'>
+									<DeleteIcon
+										onClick={() => {
+											deleteMovie(name)
+										}}
+									/>
+									<EditIcon
+										onClick={() => {
+											history.push('/edit/' + name)
+										}}
+									/>
+								</div>
+							</div>
+						</div>
 					))}
 				</article>
 			</section>

@@ -1,0 +1,35 @@
+.links {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-decoration: none !important;
+	align-items: center;
+	justify-content: left;
+	width: min-content;
+}
+.link {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: inherit;
+	margin: 0 auto;
+}
+.icon {
+	display: none !important;
+}
+.header {
+	width: 100%;
+}
+.header {
+	display: flex;
+	width: 50vw;
+	justify-content: space-between;
+}
+@media (min-width: 600px) {
+	.icon {
+		display: inline !important;
+	}
+	.links {
+		display: none;
+	}
+}

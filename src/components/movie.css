@@ -1,11 +1,15 @@
 .navbar {
 	font-size: 1rem;
 	padding: 0.75rem 0;
-	background: black;
-	color: whitesmoke;
 	text-transform: uppercase;
 	width: 100%;
 	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.toggle {
+	margin-left: auto;
 }
 .app {
 	display: grid;
@@ -17,19 +21,16 @@
 .card {
 	display: flex;
 	flex-direction: column;
-	border: 1px solid #123637;
 	border-radius: 1rem;
 	overflow: hidden;
 	width: 100%;
-	max-width: 50rem;
+	max-width: 35rem;
 	transition: all 0.25s ease-out;
+	height: min-content;
 }
-
-.card * {
-	background: #123637;
-	color: whitesmoke;
+.menu {
+	margin-left: 1rem;
 }
-
 .movieContainer {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -68,6 +69,21 @@
 .summary {
 	padding: 0 1rem;
 }
+.buttonList {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.space {
+	display: flex;
+	padding: 1rem 1rem;
+}
+.space * {
+	margin-right: 1rem;
+}
+.space:nth-child(1) {
+	margin-right: auto;
+}
 @media (min-width: 600px) {
 	.navbar {
 		font-size: 1.25rem;
@@ -80,10 +96,16 @@
 	.title {
 		font-size: 1rem;
 	}
+	.menu {
+		display: none !important;
+	}
 }
 @media (min-width: 800px) {
 	.navbar {
 		font-size: 1.5rem;
 		padding: 1.75rem 0;
+	}
+	.app {
+		grid-template-columns: 1fr 1fr;
 	}
 }

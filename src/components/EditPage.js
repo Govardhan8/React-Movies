@@ -1,17 +1,26 @@
-import { useState } from 'react'
 import { Button, TextField } from '@mui/material'
-import './inputForm.css'
-import { useMovies, StyleComponent } from './context/Theme'
+import { useState } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
+import { StyleComponent, useMovies } from './context/Theme'
 
-const InputForm = () => {
-	const [name, setName] = useState('')
-	const [rating, setRating] = useState('')
-	const [poster, setPoster] = useState('')
-	const [summary, setSummary] = useState('')
+const EditPage = () => {
+	const params = useParams()
 	const { movies, setMovies } = useMovies()
-
+	const movie = movies.reduce((m) => {
+		if (m.name === params.name) {
+			return m
+		}
+	})
+	const [name, setName] = useState(movie.name)
+	const [rating, setRating] = useState(movie.rating)
+	const [poster, setPoster] = useState(movie.poster)
+	const [summary, setSummary] = useState(movie.summary)
+	const history = useHistory()
 	const handleClick = (mov) => {
-		setMovies([...movies, mov])
+		const newMovies = [...movies]
+		newMovies[movie.id - 1] = mov
+		setMovies([...newMovies])
+		history.push('/')
 	}
 
 	return (
@@ -66,10 +75,10 @@ const InputForm = () => {
 					})
 				}}
 			>
-				Add Movie
+				Save
 			</Button>
 		</div>
 	)
 }
 
-export default InputForm
+export default EditPage
