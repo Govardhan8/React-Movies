@@ -21,7 +21,7 @@ const Movies = () => {
 				style={{ background: !theme ? '#0a1929' : 'white' }}
 			>
 				<article className='app'>
-					{movies.map(({ name, poster, rating, summary }) => (
+					{movies.map(({ name, poster, rating, summary, index }) => (
 						<div key={name}>
 							<Movie
 								name={name}

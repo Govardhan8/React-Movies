@@ -18,7 +18,7 @@ export default function App() {
 					<Route exact path='/add'>
 						<InputForm />
 					</Route>
-					<Route path='/edit/:name'>
+					<Route path='/edit/:id'>
 						<EditPage />
 					</Route>
 				</Switch>

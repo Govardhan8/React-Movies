@@ -4,18 +4,16 @@ import { useParams, useHistory } from 'react-router-dom'
 import { StyleComponent, useMovies } from './context/Theme'
 
 const EditPage = () => {
-	const params = useParams()
+	const { id } = useParams()
 	const { movies, setMovies } = useMovies()
 	// eslint-disable-next-line
-	const movie = movies.reduce((m) => {
-		if (m.name === params.name) {
-			return m
-		}
-	})
-	const [name, setName] = useState(movie.name)
-	const [rating, setRating] = useState(movie.rating)
-	const [poster, setPoster] = useState(movie.poster)
-	const [summary, setSummary] = useState(movie.summary)
+
+	const movie = movies.filter((m) => m.name === id)
+	console.log(movie)
+	const [newname, setName] = useState(movie[0].name)
+	const [rating, setRating] = useState(movie[0].rating)
+	const [poster, setPoster] = useState(movie[0].poster)
+	const [summary, setSummary] = useState(movie[0].summary)
 	const history = useHistory()
 	const handleClick = (mov) => {
 		const newMovies = [...movies]
@@ -33,7 +31,7 @@ const EditPage = () => {
 					variant='standard'
 					onChange={(e) => setName(e.target.value)}
 					placeholder='Enter the Name'
-					value={name}
+					value={newname}
 				/>
 				<TextField
 					id='standard-basic'
@@ -69,7 +67,7 @@ const EditPage = () => {
 					setPoster('')
 					setSummary('')
 					handleClick({
-						name,
+						name: newname,
 						poster,
 						rating,
 						summary,
