@@ -6,6 +6,7 @@ import { StyleComponent, useMovies } from './context/Theme'
 const EditPage = () => {
 	const params = useParams()
 	const { movies, setMovies } = useMovies()
+	// eslint-disable-next-line
 	const movie = movies.reduce((m) => {
 		if (m.name === params.name) {
 			return m
