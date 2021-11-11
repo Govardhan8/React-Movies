@@ -17,7 +17,7 @@ const EditPage = () => {
 	const history = useHistory()
 	const handleClick = (mov) => {
 		const newMovies = [...movies]
-		newMovies[movie.id - 1] = mov
+		newMovies[movie[0].id - 1] = mov
 		setMovies([...newMovies])
 		history.push('/')
 	}
