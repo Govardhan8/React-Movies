@@ -1,5 +1,5 @@
 import { Movie } from './Movie'
-import { useTheme, useMovies } from './context/Theme'
+import { useTheme, useMovies, StyleComponent } from './context/Theme'
 import Like from './Like'
 import { useHistory } from 'react-router-dom'
 import DeleteIcon from '@mui/icons-material/Delete'
@@ -29,7 +29,7 @@ const Movies = () => {
 								rating={rating}
 								summary={summary}
 							/>
-							<div className='buttonList'>
+							<div className='buttonList' style={StyleComponent()}>
 								<Like />
 								<div className='space'>
 									<DeleteIcon
