@@ -7,7 +7,7 @@ import AddIcon from '@mui/icons-material/Add'
 import HomeIcon from '@mui/icons-material/Home'
 import { Link } from 'react-router-dom'
 
-export default function NestedList({ style }) {
+export default function NestedList({ style, menu }) {
 	return (
 		<List
 			sx={{
@@ -19,7 +19,7 @@ export default function NestedList({ style }) {
 			aria-labelledby='nested-list-subheader'
 		>
 			<ListItemButton>
-				<Link className='links' to='/'>
+				<Link className='links' onClick={menu} to='/'>
 					<ListItemIcon>
 						<HomeIcon style={{ color: style.color }} />
 					</ListItemIcon>
@@ -27,7 +27,7 @@ export default function NestedList({ style }) {
 				</Link>
 			</ListItemButton>
 			<ListItemButton>
-				<Link to='add' className='links'>
+				<Link to='add' className='links' onClick={menu}>
 					<ListItemIcon>
 						<AddIcon style={{ color: style.color }} />
 					</ListItemIcon>

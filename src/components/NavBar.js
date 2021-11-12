@@ -41,7 +41,7 @@ const NavBar = () => {
 					}}
 				/>
 			</nav>
-			{menu && <NestedList style={styles} />}
+			{menu && <NestedList style={styles} menu={displayMenu} />}
 		</>
 	)
 }

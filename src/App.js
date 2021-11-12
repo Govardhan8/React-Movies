@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import InputForm from './components/InputForm'
 import EditPage from './components/EditPage'
+import TrailerPage from './components/TrailerPage'
 
 export default function App() {
 	return (
@@ -18,8 +19,11 @@ export default function App() {
 					<Route exact path='/add'>
 						<InputForm />
 					</Route>
-					<Route path='/edit/:id'>
+					<Route exact path='/edit/:id'>
 						<EditPage />
+					</Route>
+					<Route exact path='/trailer/:id'>
+						<TrailerPage />
 					</Route>
 				</Switch>
 			</ContextWrapper>
