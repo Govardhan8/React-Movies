@@ -6,13 +6,23 @@ import Container from '@mui/material/Container'
 const Movies = () => {
 	const { movies } = useMovies()
 	return (
-		<Container>
-			<Paper
+		<Paper
+			sx={{
+				width: '100vw',
+				display: 'grid',
+				justifyContent: 'center',
+			}}
+		>
+			<Container
 				sx={{
 					padding: '1rem',
 					display: 'grid',
 					justifyItems: 'center',
-					gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' },
+					gridTemplateColumns: {
+						xs: '1fr',
+						md: 'repeat(2,minmax(min-content,450px))',
+						lg: 'repeat(3,minmax(min-content,450px))',
+					},
 					gap: '2rem',
 					borderRadius: 0,
 				}}
@@ -20,8 +30,8 @@ const Movies = () => {
 				{movies.map((movie, index) => (
 					<Movie key={index} movie={movie} />
 				))}
-			</Paper>
-		</Container>
+			</Container>
+		</Paper>
 	)
 }
 

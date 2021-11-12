@@ -43,7 +43,7 @@ const Movie = ({ movie, hide }) => {
 				sx={{
 					height: 'min-content',
 					width: '100%',
-					maxWidth: 500,
+					maxWidth: '800px',
 					border: '1px solid slategray',
 				}}
 			>
@@ -52,12 +52,14 @@ const Movie = ({ movie, hide }) => {
 						history.push('/trailer/' + movie.id)
 					}}
 					component={!hide ? 'img' : 'iframe'}
-					width='100%'
 					sx={{
+						width: '100%',
+						maxWidth: '800px',
 						height: { xs: 250, sm: 350, md: 400 },
 					}}
 					src={!hide ? movie.poster : movie.trailer}
 					alt={movie.name}
+					allowFullScreen
 				/>
 
 				<CardHeader

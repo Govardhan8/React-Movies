@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useMovies } from './context/Theme'
 import Movie from './Movie'
 import Container from '@mui/material/Container'
+import Paper from '@mui/material/Paper'
 
 const TrailerPage = () => {
 	const { id } = useParams()
@@ -17,17 +18,26 @@ const TrailerPage = () => {
 
 	return (
 		<>
-			<Container
+			<Paper
 				sx={{
-					padding: '1rem',
+					width: '100vw',
 					display: 'grid',
-					justifyItems: 'center',
-					gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' },
-					gap: '2rem',
+					justifyContent: 'center',
+					minHeight: '100vh',
 				}}
 			>
-				<Movie movie={movie[0]} hide />
-			</Container>
+				<Container
+					sx={{
+						display: 'flex',
+						justifyContent: 'center',
+						alignItems: 'center',
+						padding: '1rem',
+						width: '100vw',
+					}}
+				>
+					<Movie movie={movie[0]} hide />
+				</Container>
+			</Paper>
 		</>
 	)
 }
