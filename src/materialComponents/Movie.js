@@ -44,6 +44,7 @@ const Movie = ({ movie, hide }) => {
 					height: 'min-content',
 					width: '100%',
 					maxWidth: 500,
+					border: '1px solid slategray',
 				}}
 			>
 				<CardMedia
@@ -71,7 +72,7 @@ const Movie = ({ movie, hide }) => {
 						edge='start'
 						color='inherit'
 						aria-label='open drawer'
-						sx={{ mr: 'auto' }}
+						sx={{ ml: 2, mr: 'auto' }}
 					>
 						<DeleteIcon />
 					</IconButton>
