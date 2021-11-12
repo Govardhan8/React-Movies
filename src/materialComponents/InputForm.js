@@ -30,6 +30,7 @@ const InputForm = () => {
 				sx={{
 					display: 'grid',
 					width: '90%',
+					maxWidth: '30rem',
 				}}
 			>
 				<TextField
@@ -78,12 +79,13 @@ const InputForm = () => {
 					display: 'grid',
 					width: '90%',
 					padding: '1rem 0',
+					maxWidth: '30rem',
 				}}
 			>
 				<Button
 					sx={{
 						width: '100%',
-						height: '3rem',
+						height: '4rem',
 					}}
 					variant='contained'
 					onClick={() => {

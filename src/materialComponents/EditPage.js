@@ -38,6 +38,7 @@ const EditPage = () => {
 				sx={{
 					display: 'grid',
 					width: '90%',
+					maxWidth: '30rem',
 				}}
 			>
 				<TextField
@@ -87,6 +88,7 @@ const EditPage = () => {
 					width: '90%',
 					height: '4rem',
 					padding: '0.5rem 0',
+					maxWidth: '30rem',
 				}}
 			>
 				<Button
