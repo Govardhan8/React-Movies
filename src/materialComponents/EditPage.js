@@ -85,6 +85,7 @@ const EditPage = () => {
 				sx={{
 					display: 'grid',
 					width: '90%',
+					height: '4rem',
 					padding: '0.5rem 0',
 				}}
 			>
