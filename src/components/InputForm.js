@@ -8,6 +8,7 @@ const InputForm = () => {
 	const [rating, setRating] = useState('')
 	const [poster, setPoster] = useState('')
 	const [summary, setSummary] = useState('')
+	const [trailer, setTrailer] = useState('')
 	const { movies, setMovies } = useMovies()
 
 	const handleClick = (mov) => {
@@ -49,6 +50,14 @@ const InputForm = () => {
 					placeholder='Enter summary'
 					value={summary}
 				/>
+				<TextField
+					id='standard-basic'
+					label='Movie trailer*'
+					variant='standard'
+					onChange={(e) => setTrailer(e.target.value)}
+					placeholder='Enter trailer'
+					value={trailer}
+				/>
 			</div>
 
 			<Button
@@ -58,11 +67,13 @@ const InputForm = () => {
 					setRating('')
 					setPoster('')
 					setSummary('')
+					setTrailer('')
 					handleClick({
 						name,
 						poster,
 						rating,
 						summary,
+						trailer,
 					})
 				}}
 			>

@@ -3,12 +3,12 @@ import './movie.css'
 import { Description } from './Description'
 import { StyleComponent } from './context/Theme'
 
-export function Movie({ name, url, rating, summary }) {
+export function Movie({ name, url, rating, summary, onClick }) {
 	return (
 		<>
 			<div className='card' style={StyleComponent()}>
 				<div className='movieContainer'>
-					<img className='image' src={url} alt={name} />
+					<img className='image' src={url} alt={name} onClick={onClick} />
 					<div className='details'>
 						<h2 className='rating'>
 							<StarIcon />

@@ -22,13 +22,11 @@ const Movies = () => {
 			>
 				<article className='app'>
 					{movies.map(({ name, poster, rating, summary, id }) => (
-						<div
-							onClick={() => {
-								history.push('/trailer/' + id)
-							}}
-							key={name}
-						>
+						<div key={name}>
 							<Movie
+								onClick={() => {
+									history.push('/trailer/' + id)
+								}}
 								name={name}
 								url={poster}
 								rating={rating}
