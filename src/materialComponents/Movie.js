@@ -43,7 +43,7 @@ const Movie = ({ movie, hide }) => {
 				sx={{
 					height: 'min-content',
 					width: '100%',
-					maxWidth: 600,
+					maxWidth: 500,
 				}}
 			>
 				<CardMedia
