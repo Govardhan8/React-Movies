@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Button, TextField } from '@mui/material'
-import './inputForm.css'
-import { useMovies, StyleComponent } from './context/Theme'
+import { useMovies } from './context/Theme'
+import Box from '@mui/material/Box'
+import Paper from '@mui/material/Paper'
 
 const InputForm = () => {
 	const [name, setName] = useState('')
@@ -16,8 +17,21 @@ const InputForm = () => {
 	}
 
 	return (
-		<div className='inputContainer' style={StyleComponent()}>
-			<div className='inputs'>
+		<Paper
+			sx={{
+				display: 'grid',
+				gridTemplateColumns: '1fr',
+				minHeight: '100vh',
+				borderRadius: 0,
+				justifyItems: 'center',
+			}}
+		>
+			<Box
+				sx={{
+					display: 'grid',
+					width: '90%',
+				}}
+			>
 				<TextField
 					id='standard-basic'
 					label='Movie Name*'
@@ -58,28 +72,39 @@ const InputForm = () => {
 					placeholder='Enter trailer'
 					value={trailer}
 				/>
-			</div>
-
-			<Button
-				variant='contained'
-				onClick={() => {
-					setName('')
-					setRating('')
-					setPoster('')
-					setSummary('')
-					setTrailer('')
-					handleClick({
-						name,
-						poster,
-						rating,
-						summary,
-						trailer,
-					})
+			</Box>
+			<Box
+				sx={{
+					display: 'grid',
+					width: '90%',
+					padding: '1rem 0',
 				}}
 			>
-				Add Movie
-			</Button>
-		</div>
+				<Button
+					sx={{
+						width: '100%',
+						height: '3rem',
+					}}
+					variant='contained'
+					onClick={() => {
+						setName('')
+						setRating('')
+						setPoster('')
+						setSummary('')
+						setTrailer('')
+						handleClick({
+							name,
+							poster,
+							rating,
+							summary,
+							trailer,
+						})
+					}}
+				>
+					Add Movie
+				</Button>
+			</Box>
+		</Paper>
 	)
 }
 

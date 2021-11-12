@@ -9,7 +9,6 @@ const Movies = () => {
 	const { theme } = useTheme()
 	const { movies, setMovies } = useMovies()
 	const deleteMovie = (name) => {
-		console.log('deleting', name)
 		const newMovies = movies.filter((m) => m.name !== name)
 		setMovies([...newMovies])
 	}

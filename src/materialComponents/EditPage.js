@@ -1,7 +1,9 @@
 import { Button, TextField } from '@mui/material'
 import { useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { StyleComponent, useMovies } from './context/Theme'
+import { useMovies } from './context/Theme'
+import Box from '@mui/material/Box'
+import Paper from '@mui/material/Paper'
 
 const EditPage = () => {
 	const { id } = useParams()
@@ -22,8 +24,22 @@ const EditPage = () => {
 	}
 
 	return (
-		<div className='inputContainer' style={StyleComponent()}>
-			<div className='inputs'>
+		<Paper
+			sx={{
+				display: 'grid',
+				gridTemplateColumns: '1fr',
+				minHeight: '100vh',
+				borderRadius: 0,
+				justifyItems: 'center',
+				padding: '1rem',
+			}}
+		>
+			<Box
+				sx={{
+					display: 'grid',
+					width: '90%',
+				}}
+			>
 				<TextField
 					id='standard-basic'
 					label='Movie Name*'
@@ -64,23 +80,30 @@ const EditPage = () => {
 					placeholder='Enter Trailer'
 					value={trailer}
 				/>
-			</div>
-
-			<Button
-				variant='contained'
-				onClick={() => {
-					handleClick({
-						name: newname,
-						poster,
-						rating,
-						summary,
-						trailer,
-					})
+			</Box>
+			<Box
+				sx={{
+					display: 'grid',
+					width: '90%',
+					padding: '0.5rem 0',
 				}}
 			>
-				Save
-			</Button>
-		</div>
+				<Button
+					variant='contained'
+					onClick={() => {
+						handleClick({
+							name: newname,
+							poster,
+							rating,
+							summary,
+							trailer,
+						})
+					}}
+				>
+					Save
+				</Button>
+			</Box>
+		</Paper>
 	)
 }
 
