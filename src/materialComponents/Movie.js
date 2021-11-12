@@ -61,7 +61,7 @@ const Movie = ({ movie, hide }) => {
 				/>
 
 				<CardHeader
-					sx={{ pb: 0 }}
+					sx={{ pb: 0, ml: 2 }}
 					title={movie.name}
 					subheader={`IMDB: ${movie.rating}/10`}
 				/>
