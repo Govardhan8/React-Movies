@@ -7,7 +7,15 @@ import { Description } from './Description'
 const TrailerPage = () => {
 	const { id } = useParams()
 	const { movies } = useMovies()
-	const movie = movies[id - 1]
+
+	const movie = movies.filter((m) => {
+		if (m.id === id) {
+			return m
+		} else {
+			return ''
+		}
+	})
+	console.log(movie)
 
 	return (
 		<section className='pageContainer'>
@@ -15,19 +23,19 @@ const TrailerPage = () => {
 				<iframe
 					width='100%'
 					height='315'
-					src={movie.trailer}
+					src={movie[0].trailer}
 					title='YouTube video player'
 					frameBorder='0'
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 					allowFullScreen
 				></iframe>
 				<article className='content'>
-					<h3>{movie.name}</h3>
+					<h3>{movie[0].name}</h3>
 					<span>
 						<StarIcon />
-						{movie.rating}/10
+						{movie[0].rating}/10
 					</span>
-					<Description summary={movie.summary} />
+					<Description summary={movie[0].summary} />
 				</article>
 			</div>
 		</section>

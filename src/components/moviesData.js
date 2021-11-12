@@ -1,6 +1,6 @@
 const movies = [
 	{
-		id: 1,
+		id: '1',
 		name: 'The incredible HULK',
 		poster:
 			'https://image.cnbcfm.com/api/v1/image/105903943-1557419993815gettyimages-867191380.jpeg?v=1557420050&w=929&h=523',
@@ -10,7 +10,7 @@ const movies = [
 		trailer: 'https://www.youtube.com/embed/xbqNb2PFKKA',
 	},
 	{
-		id: 2,
+		id: '2',
 		name: 'THOR: The dark world',
 		poster:
 			'https://external-preview.redd.it/cJvFzpJudXkWX5D6ZVOr2Z9nM2O4_P1pn-fAi6G5aCg.jpg?width=640&crop=smart&auto=webp&s=a8fc41bdbe3e0b29d0e4da411de52637a2731dc5',
@@ -20,7 +20,7 @@ const movies = [
 		trailer: 'https://www.youtube.com/embed/npvJ9FTgZbM',
 	},
 	{
-		id: 3,
+		id: '3',
 		name: 'Iron man 2',
 		poster:
 			'https://www.themoviedb.org/t/p/original/zqeIU0BRbN0NXlnAJTr2oyWgufp.jpg',
@@ -30,7 +30,7 @@ const movies = [
 		trailer: 'https://www.youtube.com/embed/wKtcmiifycU',
 	},
 	{
-		id: 4,
+		id: '4',
 		name: 'Avengers : Age of ultron',
 		poster:
 			'http://oyster.ignimgs.com/wordpress/stg.ign.com/2015/04/avengers-1600d.jpg',
@@ -40,7 +40,7 @@ const movies = [
 		trailer: 'https://www.youtube.com/embed/tmeOjFno6Do',
 	},
 	{
-		id: 5,
+		id: '5',
 		name: 'Thor',
 		poster:
 			'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555925330/shape/mentalfloss/thor.jpg?itok=sjYmB5Nz',
@@ -50,7 +50,7 @@ const movies = [
 		trailer: 'https://www.youtube.com/embed/JOddp-nlNvQ',
 	},
 	{
-		id: 6,
+		id: '6',
 		name: 'Captain Marvel',
 		poster: 'https://i.ytimg.com/vi/-B9m0cv1-WY/maxresdefault.jpg',
 		rating: '8.1',
