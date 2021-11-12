@@ -1,12 +1,9 @@
 import './App.css'
-// import Movies from './components/Movies'
-// import { ContextWrapper } from './components/context/Theme'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ContextWrapper } from './materialComponents/context/Theme'
-// import NavBar from './components/NavBar'
 import InputForm from './materialComponents/InputForm'
 import EditPage from './materialComponents/EditPage'
-// import TrailerPage from './components/TrailerPage'
+import TrailerPage from './materialComponents/TrailerPage'
 import Navbar from './materialComponents/Navbar'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useState } from 'react'
@@ -33,6 +30,9 @@ export default function App() {
 						</Route>
 						<Route exact path='/edit/:id'>
 							<EditPage />
+						</Route>
+						<Route exact path='/trailer/:id'>
+							<TrailerPage />
 						</Route>
 					</Switch>
 				</ThemeProvider>

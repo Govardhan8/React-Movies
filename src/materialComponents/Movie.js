@@ -25,10 +25,11 @@ const ExpandMore = styled((props) => {
 	}),
 }))
 
-const Movie = ({ movie }) => {
+const Movie = ({ movie, hide }) => {
 	const [expanded, setExpanded] = useState(false)
 	const { movies, setMovies } = useMovies()
 	const history = useHistory()
+	console.log(movie)
 	const deleteMovie = () => {
 		const newMovies = movies.filter((m) => m.name !== movie.name)
 		setMovies([...newMovies])
@@ -40,19 +41,24 @@ const Movie = ({ movie }) => {
 		<>
 			<Card
 				sx={{
-					m: 2,
 					height: 'min-content',
 					width: '100%',
 					maxWidth: 600,
 				}}
 			>
 				<CardMedia
-					component='img'
+					onClick={() => {
+						history.push('/trailer/' + movie.id)
+					}}
+					component={!hide ? 'img' : 'iframe'}
 					width='100%'
-					sx={{ height: { xs: 350 } }}
-					image={movie.poster}
+					sx={{
+						height: { xs: 350 },
+					}}
+					src={!hide ? movie.poster : movie.trailer}
 					alt={movie.name}
 				/>
+
 				<CardHeader
 					sx={{ pb: 0 }}
 					title={movie.name}

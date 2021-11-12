@@ -1,9 +1,20 @@
+import { useParams } from 'react-router-dom'
 import { useMovies } from './context/Theme'
 import Movie from './Movie'
 import Container from '@mui/material/Container'
 
-const Movies = () => {
+const TrailerPage = () => {
+	const { id } = useParams()
 	const { movies } = useMovies()
+
+	const movie = movies.filter((m) => {
+		if (m.id === id) {
+			return m
+		} else {
+			return ''
+		}
+	})
+
 	return (
 		<>
 			<Container
@@ -15,12 +26,10 @@ const Movies = () => {
 					gap: '2rem',
 				}}
 			>
-				{movies.map((movie, index) => (
-					<Movie key={index} movie={movie} />
-				))}
+				<Movie movie={movie[0]} hide />
 			</Container>
 		</>
 	)
 }
 
-export default Movies
+export default TrailerPage
