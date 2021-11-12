@@ -29,10 +29,10 @@ const Movie = ({ movie, hide }) => {
 	const [expanded, setExpanded] = useState(false)
 	const { movies, setMovies } = useMovies()
 	const history = useHistory()
-	console.log(movie)
 	const deleteMovie = () => {
 		const newMovies = movies.filter((m) => m.name !== movie.name)
 		setMovies([...newMovies])
+		history.push('/')
 	}
 	const handleExpandClick = () => {
 		setExpanded(!expanded)
@@ -54,7 +54,7 @@ const Movie = ({ movie, hide }) => {
 					component={!hide ? 'img' : 'iframe'}
 					width='100%'
 					sx={{
-						height: { xs: 350 },
+						height: { xs: 250, sm: 350, md: 400 },
 					}}
 					src={!hide ? movie.poster : movie.trailer}
 					alt={movie.name}
@@ -76,17 +76,19 @@ const Movie = ({ movie, hide }) => {
 					>
 						<DeleteIcon />
 					</IconButton>
-					<IconButton
-						size='large'
-						edge='start'
-						color='inherit'
-						aria-label='open drawer'
-						onClick={() => {
-							history.push('./edit/' + movie.name)
-						}}
-					>
-						<EditIcon />
-					</IconButton>
+					{!hide && (
+						<IconButton
+							size='large'
+							edge='start'
+							color='inherit'
+							aria-label='open drawer'
+							onClick={() => {
+								history.push('./edit/' + movie.name)
+							}}
+						>
+							<EditIcon />
+						</IconButton>
+					)}
 					<ExpandMore
 						expand={expanded}
 						onClick={handleExpandClick}
