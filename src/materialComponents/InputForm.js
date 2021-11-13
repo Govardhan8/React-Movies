@@ -3,6 +3,7 @@ import { Button, TextField } from '@mui/material'
 import { useMovies } from './context/Theme'
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
+import { useHistory } from 'react-router-dom'
 
 const InputForm = () => {
 	const [name, setName] = useState('')
@@ -11,9 +12,12 @@ const InputForm = () => {
 	const [summary, setSummary] = useState('')
 	const [trailer, setTrailer] = useState('')
 	const { movies, setMovies } = useMovies()
+	const history = useHistory()
 
 	const handleClick = (mov) => {
+		mov.id = movies.length + 1
 		setMovies([...movies, mov])
+		history.push('/')
 	}
 
 	return (
