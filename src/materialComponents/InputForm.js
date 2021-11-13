@@ -15,8 +15,8 @@ const InputForm = () => {
 	const history = useHistory()
 
 	const handleClick = (mov) => {
-		mov.id = movies.length + 1
 		setMovies([...movies, mov])
+		console.log(movies)
 		history.push('/')
 	}
 
@@ -99,6 +99,7 @@ const InputForm = () => {
 						setSummary('')
 						setTrailer('')
 						handleClick({
+							id: String(movies.length + 1),
 							name,
 							poster,
 							rating,

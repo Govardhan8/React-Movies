@@ -5,6 +5,7 @@ import Container from '@mui/material/Container'
 
 const Movies = () => {
 	const { movies } = useMovies()
+	console.log(movies)
 	return (
 		<Paper
 			sx={{

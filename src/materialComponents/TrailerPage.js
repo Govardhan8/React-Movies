@@ -7,7 +7,7 @@ import Paper from '@mui/material/Paper'
 const TrailerPage = () => {
 	const { id } = useParams()
 	const { movies } = useMovies()
-
+	console.log(movies)
 	const movie = movies.filter((m) => {
 		if (m.id === id) {
 			return m
