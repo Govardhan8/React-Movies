@@ -45,6 +45,7 @@ const Movie = ({ movie, hide }) => {
 					width: '100%',
 					maxWidth: '800px',
 					border: '1px solid slategray',
+					borderRadius: '1rem',
 				}}
 			>
 				<CardMedia
@@ -63,7 +64,7 @@ const Movie = ({ movie, hide }) => {
 				/>
 
 				<CardHeader
-					sx={{ pb: 0, ml: 2 }}
+					sx={{ pb: 0, ml: 3 }}
 					title={movie.name}
 					subheader={`IMDB: ${movie.rating}/10`}
 				/>

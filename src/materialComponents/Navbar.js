@@ -14,8 +14,22 @@ const Navbar = ({ mode, setMode }) => {
 	const history = useHistory()
 	return (
 		<>
-			<Box sx={{ flexGrow: 1 }}>
-				<AppBar position='static'>
+			<Box
+				sx={{
+					flexGrow: 1,
+					position: 'sticky',
+					top: '0',
+					zIndex: '10',
+				}}
+			>
+				<AppBar
+					sx={{
+						flexGrow: 1,
+						position: 'sticky',
+						top: '0',
+						zIndex: '10',
+					}}
+				>
 					<Toolbar>
 						<IconButton
 							size='large'
@@ -53,7 +67,12 @@ const Navbar = ({ mode, setMode }) => {
 						>
 							{mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
 						</IconButton>
-						<IconButton color='inherit'>
+						<IconButton
+							color='inherit'
+							onClick={() => {
+								history.push('/Games')
+							}}
+						>
 							<SportsEsportsIcon />
 						</IconButton>
 					</Toolbar>

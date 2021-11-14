@@ -24,7 +24,7 @@ const Movies = () => {
 						md: 'repeat(2,minmax(min-content,450px))',
 						lg: 'repeat(3,minmax(min-content,450px))',
 					},
-					gap: '2rem',
+					gap: '3rem 2rem',
 					borderRadius: 0,
 				}}
 			>

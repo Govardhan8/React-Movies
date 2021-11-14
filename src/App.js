@@ -8,6 +8,7 @@ import Navbar from './materialComponents/Navbar'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useState } from 'react'
 import Movies from './materialComponents/Movies'
+import Games from './materialComponents/Games/'
 
 export default function App() {
 	const [mode, setMode] = useState('light')
@@ -33,6 +34,9 @@ export default function App() {
 						</Route>
 						<Route exact path='/trailer/:id'>
 							<TrailerPage />
+						</Route>
+						<Route exact path='/Games'>
+							<Games />
 						</Route>
 					</Switch>
 				</ThemeProvider>
