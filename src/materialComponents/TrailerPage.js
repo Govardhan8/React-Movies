@@ -20,7 +20,7 @@ const TrailerPage = () => {
 		<>
 			<Paper
 				sx={{
-					width: '100vw',
+					width: '100%',
 					display: 'grid',
 					justifyContent: 'center',
 					minHeight: '100vh',
@@ -32,7 +32,7 @@ const TrailerPage = () => {
 						justifyContent: 'center',
 						alignItems: 'center',
 						padding: '1rem',
-						width: '100vw',
+						width: '100%',
 					}}
 				>
 					<Movie movie={movie[0]} hide />

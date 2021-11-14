@@ -8,6 +8,7 @@ import AddIcon from '@mui/icons-material/Add'
 import HomeIcon from '@mui/icons-material/Home'
 import Typography from '@mui/material/Typography'
 import { useHistory } from 'react-router-dom'
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
 
 const Navbar = ({ mode, setMode }) => {
 	const history = useHistory()
@@ -51,6 +52,9 @@ const Navbar = ({ mode, setMode }) => {
 							color='inherit'
 						>
 							{mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+						</IconButton>
+						<IconButton color='inherit'>
+							<SportsEsportsIcon />
 						</IconButton>
 					</Toolbar>
 				</AppBar>

@@ -9,7 +9,7 @@ const Movies = () => {
 	return (
 		<Paper
 			sx={{
-				width: '100vw',
+				width: '100%',
 				display: 'grid',
 				justifyContent: 'center',
 			}}
