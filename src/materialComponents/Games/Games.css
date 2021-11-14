@@ -47,6 +47,13 @@
 	color: lightgray;
 	padding: 0 0 1rem 0;
 	font-size: 1.25rem;
+	display: flex;
+	flex-direction: column;
+}
+.restart {
+	display: flex;
+	padding: 0.5rem 0;
+	color: slategray;
 }
 .start * {
 	color: darkgray;

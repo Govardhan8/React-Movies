@@ -56,6 +56,10 @@ const TicTacToe = () => {
 			winner = decideWinner(copyGame)
 		}
 	}
+	const restart = () => {
+		winner = null
+		setGameBoard([null, null, null, null, null, null, null, null, null])
+	}
 	return (
 		<>
 			<p className='gameHeading'>Tic tac toe</p>
@@ -89,6 +93,15 @@ const TicTacToe = () => {
 						) : (
 							values[1] + "'s Turn"
 						)}
+						<span
+							className='restart'
+							onClick={() => {
+								restart()
+							}}
+						>
+							<RefreshIcon sx={{ fontSize: { sm: '1.5rem', md: '2rem' } }} />{' '}
+							Restart
+						</span>
 					</p>
 					<div className='gameBoard'>
 						{gameBoard.map((game, i) => (
