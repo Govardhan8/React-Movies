@@ -26,6 +26,7 @@ const ColorGame = () => {
 					className='btn'
 					variant='outlined'
 					onClick={() => {
+						setColor('')
 						setColors([color, ...colors])
 					}}
 				>
