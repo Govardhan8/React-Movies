@@ -44,7 +44,7 @@ const Movie = ({ movie, hide, deleteFunction }) => {
 				sx={{
 					height: 'min-content',
 					width: '100%',
-					maxWidth: '800px',
+					maxWidth: '600px',
 					border: '1px solid slategray',
 					borderRadius: '1rem',
 					marginTop: '1rem',
