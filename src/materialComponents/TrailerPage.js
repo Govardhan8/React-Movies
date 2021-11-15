@@ -29,7 +29,7 @@ const TrailerPage = () => {
 				sx={{
 					width: '100%',
 					display: 'grid',
-
+					alignItems: 'start',
 					minHeight: '100vh',
 				}}
 			>
