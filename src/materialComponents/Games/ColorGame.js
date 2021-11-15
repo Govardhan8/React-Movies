@@ -1,25 +1,19 @@
-import TextField from '@mui/material/TextField'
 import { useState } from 'react'
 import Button from '@mui/material/Button'
 
 const ColorGame = () => {
-	const [color, setColor] = useState('')
+	const [color, setColor] = useState('white')
 	const [colors, setColors] = useState([])
 	return (
 		<>
 			<p className='gameHeading'>ColorGame</p>
 			<div className='gameContainer'>
-				<TextField
+				<input
 					className='inputField'
-					id='standard-basic'
-					label='Standard'
-					variant='standard'
-					sx={{
-						fontSize: { xs: '1rem', lg: '1.5rem', xl: '2rem' },
-					}}
 					onChange={(e) => {
 						setColor(e.target.value)
 					}}
+					type='color'
 					value={color}
 				/>
 				<Button
