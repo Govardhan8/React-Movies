@@ -43,6 +43,7 @@ const InputForm = () => {
 					display: 'grid',
 					width: '90%',
 					maxWidth: '30rem',
+					paddingTop: '1rem',
 				}}
 			>
 				<TextField
@@ -90,7 +91,6 @@ const InputForm = () => {
 				sx={{
 					display: 'grid',
 					width: '90%',
-					padding: '1rem 0',
 					maxWidth: '30rem',
 				}}
 			>
