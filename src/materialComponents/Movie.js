@@ -105,7 +105,9 @@ const Movie = ({ movie, hide, deleteFunction }) => {
 				</CardActions>
 				<Collapse in={expanded} timeout='auto' unmountOnExit>
 					<CardContent>
-						<Typography paragraph>Description :</Typography>
+						<Typography paragraph>
+							<b>Description :</b>
+						</Typography>
 						<Typography paragraph>{movie.summary}</Typography>
 					</CardContent>
 				</Collapse>
