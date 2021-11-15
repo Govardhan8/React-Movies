@@ -1,26 +1,42 @@
 import { Button, TextField } from '@mui/material'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { useMovies } from './context/Theme'
+// import { useMovies } from './context/Theme'
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 
 const EditPage = () => {
 	const { id } = useParams()
-	const { movies, setMovies } = useMovies()
-	const movie = movies.filter((m) => m.name === id)
-	const [newname, setName] = useState(movie[0].name)
-	const [rating, setRating] = useState(movie[0].rating)
-	const [poster, setPoster] = useState(movie[0].poster)
-	const [summary, setSummary] = useState(movie[0].summary)
-	const [trailer, setTrailer] = useState(movie[0].trailer)
+	// const { movies, setMovies } = useMovies()
+	// const movie = movies.filter((m) => m.name === id)
+	// console.log(id)
+
+	const [name, setName] = useState('')
+	const [rating, setRating] = useState('')
+	const [poster, setPoster] = useState('')
+	const [summary, setSummary] = useState('')
+	const [trailer, setTrailer] = useState('')
+	useEffect(() => {
+		fetch(`https://6166c4e213aa1d00170a670e.mockapi.io/movies/${id}`)
+			.then((data) => data.json())
+			.then((mv) => {
+				setName(mv.name)
+				setRating(mv.rating)
+				setPoster(mv.poster)
+				setSummary(mv.summary)
+				setTrailer(mv.trailer)
+			})
+	}, [id])
 
 	const history = useHistory()
 	const handleClick = (mov) => {
-		const newMovies = [...movies]
-		newMovies[movie[0].id - 1] = mov
-		setMovies([...newMovies])
-		history.push('/')
+		fetch(`https://6166c4e213aa1d00170a670e.mockapi.io/movies/${id}`, {
+			method: 'PUT',
+			body: JSON.stringify(mov),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		}).then(() => history.push('/'))
 	}
 
 	return (
@@ -47,7 +63,7 @@ const EditPage = () => {
 					variant='standard'
 					onChange={(e) => setName(e.target.value)}
 					placeholder='Enter the Name'
-					value={newname}
+					value={name}
 				/>
 				<TextField
 					id='standard-basic'
@@ -57,6 +73,7 @@ const EditPage = () => {
 					placeholder='Enter rating'
 					value={rating}
 				/>
+
 				<TextField
 					id='standard-basic'
 					label='Movie Poster*'
@@ -95,7 +112,7 @@ const EditPage = () => {
 					variant='contained'
 					onClick={() => {
 						handleClick({
-							name: newname,
+							name,
 							poster,
 							rating,
 							summary,

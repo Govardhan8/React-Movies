@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button, TextField } from '@mui/material'
-import { useMovies } from './context/Theme'
+// import { useMovies } from './context/Theme'
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import { useHistory } from 'react-router-dom'
@@ -11,13 +11,21 @@ const InputForm = () => {
 	const [poster, setPoster] = useState('')
 	const [summary, setSummary] = useState('')
 	const [trailer, setTrailer] = useState('')
-	const { movies, setMovies } = useMovies()
+	// const { movies, setMovies } = useMovies()
+
 	const history = useHistory()
 
 	const handleClick = (mov) => {
-		setMovies([...movies, mov])
-		console.log(movies)
-		history.push('/')
+		fetch(`https://6166c4e213aa1d00170a670e.mockapi.io/movies/`, {
+			method: 'POST',
+			body: JSON.stringify(mov),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		}).then(() => history.push('/'))
+
+		// setMovies([...movies, mov])
+		// console.log(movies)
 	}
 
 	return (
@@ -99,7 +107,6 @@ const InputForm = () => {
 						setSummary('')
 						setTrailer('')
 						handleClick({
-							id: String(movies.length + 1),
 							name,
 							poster,
 							rating,

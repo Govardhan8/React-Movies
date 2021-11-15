@@ -11,7 +11,7 @@ import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-import { useMovies } from './context/Theme'
+// import { useMovies } from './context/Theme'
 import { useHistory } from 'react-router-dom'
 
 const ExpandMore = styled((props) => {
@@ -25,13 +25,14 @@ const ExpandMore = styled((props) => {
 	}),
 }))
 
-const Movie = ({ movie, hide }) => {
+const Movie = ({ movie, hide, deleteFunction }) => {
 	const [expanded, setExpanded] = useState(false)
-	const { movies, setMovies } = useMovies()
+	// const { movies, setMovies } = useMovies()
 	const history = useHistory()
 	const deleteMovie = () => {
-		const newMovies = movies.filter((m) => m.name !== movie.name)
-		setMovies([...newMovies])
+		// const newMovies = movies.filter((m) => m.name !== movie.name)
+		// setMovies([...newMovies])
+		deleteFunction(movie.id)
 		history.push('/')
 	}
 	const handleExpandClick = () => {
@@ -86,7 +87,7 @@ const Movie = ({ movie, hide }) => {
 							color='inherit'
 							aria-label='open drawer'
 							onClick={() => {
-								history.push('./edit/' + movie.name)
+								history.push('./edit/' + movie.id)
 							}}
 						>
 							<EditIcon />

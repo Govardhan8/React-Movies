@@ -1,11 +1,26 @@
-import { useMovies } from './context/Theme'
+// import { useMovies } from './context/Theme'
 import Movie from './Movie'
 import Paper from '@mui/material/Paper'
 import Container from '@mui/material/Container'
+import { useState, useEffect } from 'react'
 
 const Movies = () => {
-	const { movies } = useMovies()
-	console.log(movies)
+	// const { movies } = useMovies()
+	const [movies, setMovies] = useState([])
+	const getMovies = () => {
+		fetch('https://6166c4e213aa1d00170a670e.mockapi.io/movies')
+			.then((data) => data.json())
+			.then((mvs) => setMovies([...mvs]))
+	}
+	useEffect(() => {
+		getMovies()
+	}, [])
+
+	const deleteMovie = (id) => {
+		fetch(`https://6166c4e213aa1d00170a670e.mockapi.io/movies/${id}`, {
+			method: 'DELETE',
+		}).then(() => getMovies())
+	}
 	return (
 		<Paper
 			sx={{
@@ -29,7 +44,7 @@ const Movies = () => {
 				}}
 			>
 				{movies.map((movie, index) => (
-					<Movie key={index} movie={movie} />
+					<Movie key={index} movie={movie} deleteFunction={deleteMovie} />
 				))}
 			</Container>
 		</Paper>
