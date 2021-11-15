@@ -31,7 +31,6 @@ const Movies = () => {
 		>
 			<Container
 				sx={{
-					padding: '1rem',
 					display: 'grid',
 					justifyItems: 'center',
 					gridTemplateColumns: {
@@ -39,7 +38,7 @@ const Movies = () => {
 						md: 'repeat(2,minmax(min-content,450px))',
 						lg: 'repeat(3,minmax(min-content,450px))',
 					},
-					gap: '3rem 2rem',
+					gap: '2rem',
 					borderRadius: 0,
 				}}
 			>

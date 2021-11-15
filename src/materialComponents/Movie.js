@@ -47,6 +47,7 @@ const Movie = ({ movie, hide, deleteFunction }) => {
 					maxWidth: '800px',
 					border: '1px solid slategray',
 					borderRadius: '1rem',
+					marginTop: '1rem',
 				}}
 			>
 				<CardMedia
