@@ -18,7 +18,11 @@ const EditPage = () => {
 		setMovie()
 	}, [id])
 
-	return <>{start && <RenderMovie movie={movies} id={id} />}</>
+	return (
+		<div style={{ minHeight: '100vh' }}>
+			{start && <RenderMovie movie={movies} id={id} />}
+		</div>
+	)
 }
 
 export default EditPage
