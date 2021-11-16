@@ -29,7 +29,7 @@ export const RenderMovie = ({ movie, id }) => {
 			.required('please enter a rating'),
 		summary: Yup.string()
 			.trim()
-			.min(4, 'Please enter more summary')
+			.min(20, 'Please enter atleast 20 characters summary')
 			.required('summary required'),
 		poster: Yup.string()
 			.trim()
