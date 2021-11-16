@@ -29,6 +29,7 @@ const Movies = () => {
 				justifyContent: 'center',
 				borderRadius: '0',
 				paddingBottom: '2rem',
+				minHeight: '100vh',
 			}}
 		>
 			<Container
