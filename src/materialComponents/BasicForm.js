@@ -5,7 +5,7 @@ import * as Yup from 'yup'
 import Paper from '@mui/material/Paper'
 import { useHistory } from 'react-router-dom'
 
-const InputForm = () => {
+const BasicForm = () => {
 	const history = useHistory()
 	const addMovie = (mov) => {
 		fetch(`https://6166c4e213aa1d00170a670e.mockapi.io/movies/`, {
@@ -18,13 +18,20 @@ const InputForm = () => {
 	}
 	const validations = Yup.object().shape({
 		name: Yup.string().min(1, 'please enter a name').required('Required'),
-		rating: Yup.string()
-			.required('No rating provided.')
-			.min(1, 'Password is too short - should be 8 chars minimum.')
-			.matches(/[0-9]/, 'Password can only contain Latin letters.'),
-		summary: Yup.string().required('summary required'),
-		poster: Yup.string().required('poster required'),
-		trailer: Yup.string().required('trailer required'),
+		rating: Yup.number()
+			.typeError('you must specify a number')
+			.min(1, 'Min value 1.')
+			.max(10, 'Max value 10.')
+			.required('please enter a rating'),
+		summary: Yup.string()
+			.min(4, 'Please enter more summary')
+			.required('summary required'),
+		poster: Yup.string()
+			.min(4, 'Please enter poster url')
+			.required('poster required'),
+		trailer: Yup.string()
+			.min(4, 'Please enter trailer url')
+			.required('trailer required'),
 	})
 
 	const { values, handleSubmit, handleChange, handleBlur, errors, touched } =
@@ -60,7 +67,7 @@ const InputForm = () => {
 						width: '90%',
 						marginTop: '1rem',
 						maxWidth: '30rem',
-						maxHeight: 'min-content',
+						maxHeight: '30rem',
 					}}
 					autoComplete='off'
 					onSubmit={handleSubmit}
@@ -136,4 +143,4 @@ const InputForm = () => {
 	)
 }
 
-export default InputForm
+export default BasicForm

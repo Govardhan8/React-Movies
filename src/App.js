@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ContextWrapper } from './materialComponents/context/Theme'
-import InputForm from './materialComponents/InputForm'
+// import InputForm from './materialComponents/InputForm'
 import EditPage from './materialComponents/EditPage'
 import TrailerPage from './materialComponents/TrailerPage'
 import Navbar from './materialComponents/Navbar'
@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useState } from 'react'
 import Movies from './materialComponents/Movies'
 import Games from './materialComponents/Games/'
+import BasicForm from './materialComponents/BasicForm'
 
 export default function App() {
 	const [mode, setMode] = useState('light')
@@ -27,7 +28,7 @@ export default function App() {
 							<Movies />
 						</Route>
 						<Route exact path='/add'>
-							<InputForm />
+							<BasicForm />
 						</Route>
 						<Route exact path='/edit/:id'>
 							<EditPage />
@@ -37,6 +38,9 @@ export default function App() {
 						</Route>
 						<Route exact path='/Games'>
 							<Games />
+						</Route>
+						<Route exact path='/Form'>
+							<BasicForm />
 						</Route>
 					</Switch>
 				</ThemeProvider>
