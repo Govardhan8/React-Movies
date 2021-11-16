@@ -10,6 +10,7 @@ import { useState } from 'react'
 import Movies from './materialComponents/Movies'
 import Games from './materialComponents/Games/'
 import BasicForm from './materialComponents/BasicForm'
+import Footer from './materialComponents/Footer'
 
 export default function App() {
 	const [mode, setMode] = useState('light')
@@ -43,6 +44,7 @@ export default function App() {
 							<BasicForm />
 						</Route>
 					</Switch>
+					<Footer />
 				</ThemeProvider>
 			</ContextWrapper>
 		</Router>

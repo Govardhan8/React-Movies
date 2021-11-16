@@ -9,3 +9,15 @@
 	align-items: center;
 	min-height: 100vh;
 }
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 3rem;
+	background: #263238;
+}
+@media (min-width: 768px) {
+	.footer {
+		height: 5rem;
+	}
+}
