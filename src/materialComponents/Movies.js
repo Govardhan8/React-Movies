@@ -28,6 +28,7 @@ const Movies = () => {
 				display: 'grid',
 				justifyContent: 'center',
 				borderRadius: '0',
+				paddingBottom: '2rem',
 			}}
 		>
 			<Container
