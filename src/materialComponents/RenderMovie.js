@@ -16,20 +16,27 @@ export const RenderMovie = ({ movie, id }) => {
 			},
 		}).then(() => history.push('/'))
 	}
+
 	const validations = Yup.object().shape({
-		name: Yup.string().min(1, 'please enter a name').required('Required'),
+		name: Yup.string()
+			.trim()
+			.min(2, 'please enter a name')
+			.required('Required'),
 		rating: Yup.number()
 			.typeError('you must specify a number')
-			.min(1, 'Min value 1.')
-			.max(10, 'Max value 10.')
+			.min(1.0, 'Min value 1.0')
+			.max(10.0, 'Max value 10.0')
 			.required('please enter a rating'),
 		summary: Yup.string()
+			.trim()
 			.min(4, 'Please enter more summary')
 			.required('summary required'),
 		poster: Yup.string()
+			.trim()
 			.min(4, 'Please enter poster url')
 			.required('poster required'),
 		trailer: Yup.string()
+			.trim()
 			.min(4, 'Please enter trailer url')
 			.required('trailer required'),
 	})
