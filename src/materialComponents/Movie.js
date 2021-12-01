@@ -32,7 +32,7 @@ const Movie = ({ movie, hide, deleteFunction }) => {
 	const deleteMovie = () => {
 		// const newMovies = movies.filter((m) => m.name !== movie.name)
 		// setMovies([...newMovies])
-		deleteFunction(movie.id)
+		deleteFunction(movie._id)
 		history.push('/')
 	}
 	const handleExpandClick = () => {
@@ -52,7 +52,7 @@ const Movie = ({ movie, hide, deleteFunction }) => {
 			>
 				<CardMedia
 					onClick={() => {
-						history.push('/trailer/' + movie.id)
+						history.push('/trailer/' + movie._id)
 					}}
 					component={!hide ? 'img' : 'iframe'}
 					sx={{
@@ -88,7 +88,7 @@ const Movie = ({ movie, hide, deleteFunction }) => {
 							color='inherit'
 							aria-label='open drawer'
 							onClick={() => {
-								history.push('./edit/' + movie.id)
+								history.push('./edit/' + movie._id)
 							}}
 						>
 							<EditIcon />

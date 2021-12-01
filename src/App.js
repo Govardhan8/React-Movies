@@ -12,6 +12,8 @@ import Games from './materialComponents/Games/'
 import BasicForm from './materialComponents/BasicForm'
 import Footer from './materialComponents/Footer'
 
+// export const Api_url='https://6166c4e213aa1d00170a670e.mockapi.io'
+export const Api_url = 'https://movies-g.herokuapp.com'
 export default function App() {
 	const [mode, setMode] = useState('light')
 	const darkTheme = createTheme({

@@ -4,11 +4,12 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import Paper from '@mui/material/Paper'
 import { useHistory } from 'react-router-dom'
+import { Api_url } from '../App.js'
 
 const InputForm = () => {
 	const history = useHistory()
 	const addMovie = (mov) => {
-		fetch(`https://6166c4e213aa1d00170a670e.mockapi.io/movies/`, {
+		fetch(`${Api_url}/movies/`, {
 			method: 'POST',
 			body: JSON.stringify(mov),
 			headers: {

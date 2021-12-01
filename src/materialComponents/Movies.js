@@ -3,12 +3,13 @@ import Movie from './Movie'
 import Paper from '@mui/material/Paper'
 import Container from '@mui/material/Container'
 import { useState, useEffect } from 'react'
+import { Api_url } from '../App.js'
 
 const Movies = () => {
 	// const { movies } = useMovies()
 	const [movies, setMovies] = useState([])
 	const getMovies = () => {
-		fetch('https://6166c4e213aa1d00170a670e.mockapi.io/movies')
+		fetch(`${Api_url}/movies`)
 			.then((data) => data.json())
 			.then((mvs) => setMovies([...mvs]))
 	}
@@ -17,7 +18,7 @@ const Movies = () => {
 	}, [])
 
 	const deleteMovie = (id) => {
-		fetch(`https://6166c4e213aa1d00170a670e.mockapi.io/movies/${id}`, {
+		fetch(`${Api_url}/movies/${id}`, {
 			method: 'DELETE',
 		}).then(() => getMovies())
 	}

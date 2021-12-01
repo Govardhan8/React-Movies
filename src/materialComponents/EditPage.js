@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { RenderMovie } from './RenderMovie'
+import { Api_url } from '../App.js'
 
 const EditPage = () => {
 	const { id } = useParams()
@@ -8,7 +9,7 @@ const EditPage = () => {
 	const [movies, setMovies] = useState('')
 	useEffect(() => {
 		const setMovie = () => {
-			fetch(`https://6166c4e213aa1d00170a670e.mockapi.io/movies/${id}`)
+			fetch(`${Api_url}/movies/${id}`)
 				.then((data) => data.json())
 				.then((mv) => {
 					setMovies(mv)

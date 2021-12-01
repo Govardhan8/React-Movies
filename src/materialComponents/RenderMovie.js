@@ -4,11 +4,12 @@ import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { Api_url } from '../App.js'
 
 export const RenderMovie = ({ movie, id }) => {
 	const history = useHistory()
 	const handleClick = (mov) => {
-		fetch(`https://6166c4e213aa1d00170a670e.mockapi.io/movies/${id}`, {
+		fetch(`${Api_url}/movies/${id}`, {
 			method: 'PUT',
 			body: JSON.stringify(mov),
 			headers: {
